@@ -14,6 +14,48 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ──────────────────────────────────────────────────────────────
+// INTEGRIDAD DE TEXTO EN PANTALLA E IMPRESIÓN
+// ──────────────────────────────────────────────────────────────
+// Los informes se abren tanto en Hosting como directamente desde una carpeta.
+// Se normaliza el texto a Unicode NFC y se corrigen los casos frecuentes de
+// UTF-8 interpretado como Windows-1252 para que tildes, eñes y signos en
+// español lleguen bien al diálogo de impresión y al PDF.
+const REPARACIONES_CODIFICACION = {
+  'Ã¡': 'á', 'Ã©': 'é', 'Ã­': 'í', 'Ã³': 'ó', 'Ãº': 'ú',
+  'Ã': 'Á', 'Ã‰': 'É', 'Ã': 'Í', 'Ã“': 'Ó', 'Ãš': 'Ú',
+  'Ã±': 'ñ', 'Ã‘': 'Ñ', 'Ã¼': 'ü', 'Ãœ': 'Ü',
+  'Â¿': '¿', 'Â¡': '¡', 'Âº': 'º', 'Âª': 'ª',
+  'â€“': '–', 'â€”': '—', 'â€œ': '“', 'â€': '”', 'â€˜': '‘', 'â€™': '’', 'â€¦': '…'
+};
+
+function normalizarTextoEspanol(valor) {
+  if (typeof valor !== 'string') return valor;
+  const normalizado = valor.normalize('NFC');
+  return normalizado.replace(/Ã.|Â.|â€./g, (fragmento) => REPARACIONES_CODIFICACION[fragmento] || fragmento);
+}
+
+function prepararTextoParaImpresion() {
+  document.documentElement.lang = 'es';
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodos = [];
+  while (walker.nextNode()) nodos.push(walker.currentNode);
+  nodos.forEach((nodo) => {
+    const corregido = normalizarTextoEspanol(nodo.nodeValue);
+    if (corregido !== nodo.nodeValue) nodo.nodeValue = corregido;
+  });
+  document.querySelectorAll('input, textarea').forEach((campo) => {
+    const corregido = normalizarTextoEspanol(campo.value);
+    if (corregido !== campo.value) campo.value = corregido;
+  });
+}
+
+window.addEventListener('beforeprint', prepararTextoParaImpresion);
+window.imprimirInforme = function () {
+  prepararTextoParaImpresion();
+  window.print();
+};
+
+// ──────────────────────────────────────────────────────────────
 // RENDER PRINCIPAL
 // ──────────────────────────────────────────────────────────────
 function renderInforme(d) {
@@ -134,7 +176,7 @@ function renderIndicadores(d) {
     }] : []),
     ...(ind.nnaAtendidos ? [{
       valor: ind.nnaAtendidos,
-      etiqueta: 'NNA atendidos',
+      etiqueta: ind.etiquetaNnaAtendidos || 'NNA atendidos',
       icono: '👥',
       tipo: 'info'
     }] : []),
@@ -217,7 +259,7 @@ function renderAreaCards(d) {
       <div class="area-stats">
         <div class="area-stat">
           <span class="stat-num">${area.sesionesRealizadas}</span>
-          <span class="stat-lbl">de ${area.sesionesProgramadas} sesiones</span>
+          <span class="stat-lbl">${area.sesionesProgramadas === 'No reportado' ? 'sesiones realizadas' : `de ${area.sesionesProgramadas} sesiones`}</span>
         </div>
         <div class="area-stat">
           <span class="stat-num">${area.participantes || '–'}</span>
@@ -488,7 +530,7 @@ function setupPrintBtn(d) {
   btn.addEventListener('click', () => {
     const checklist = verificarChecklist(d);
     const panel = document.getElementById('checklist-panel');
-    if (!panel) { window.print(); return; }
+    if (!panel) { window.imprimirInforme(); return; }
 
     if (checklist.faltantes.length === 0) {
       panel.innerHTML = `
@@ -497,7 +539,7 @@ function setupPrintBtn(d) {
           <strong>Informe listo para descargar.</strong>
           <p>Todos los campos requeridos están completos.</p>
           <div class="check-actions">
-            <button class="btn-print-confirm" onclick="window.print()">Imprimir / Exportar PDF</button>
+            <button class="btn-print-confirm" onclick="window.imprimirInforme()">Imprimir / Exportar PDF</button>
             <button class="btn-check-cerrar" onclick="cerrarChecklist()">Cancelar</button>
           </div>
         </div>`;
@@ -509,7 +551,7 @@ function setupPrintBtn(d) {
           <ul>${checklist.faltantes.map(f => `<li>${f}</li>`).join('')}</ul>
           <p class="check-nota">Puedes imprimir de todos modos, pero se recomienda completar el informe antes.</p>
           <div class="check-actions">
-            <button class="btn-print-confirm" onclick="window.print()">Imprimir de todas formas</button>
+            <button class="btn-print-confirm" onclick="window.imprimirInforme()">Imprimir de todas formas</button>
             <button class="btn-check-cerrar" onclick="cerrarChecklist()">Volver</button>
           </div>
         </div>`;
