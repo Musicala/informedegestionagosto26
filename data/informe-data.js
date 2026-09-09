@@ -11,17 +11,18 @@ const INFORME_DATA = {
   coordinador: "",
   fase: "Presentación del Día de la Familia y fortalecimiento técnico progresivo",
   indicadores: {
-    sesionesProgramadas: 1,
-    sesionesRealizadas: 12,
+    sesionesProgramadas: "No reportado",
+    sesionesRealizadas: 32,
     cumplimiento: "No comparable",
     puntualidadDocentes: "100%",
     cambiosDocente: 1,
     nnaAtendidos: "52 / 11",
+    etiquetaNnaAtendidos: "NNA reportados (jul./ago.)",
     horasProgramadas: null,
-    horasRealizadas: 24,
-    observacionGeneral: "Se realizaron 12 sesiones y 24 horas de formación. La programación registrada (0 sesiones en julio y 1 en agosto) no refleja la totalidad de actividades ejecutadas; por ello no se reporta un porcentaje consolidado. Los 52 NNA de julio y 11 de agosto son reportes mensuales y no deben sumarse como participantes únicos. El 28 de julio se realizó un cambio de docente líder en Danzas con empalme pedagógico favorable."
+    horasRealizadas: 64,
+    observacionGeneral: "Se realizaron 32 sesiones y 64 horas de formación: en julio, 3 de Danzas y 6 de Porras; en agosto, 8 de Danzas y 15 de Porras. No se reportó una programación consolidada para el periodo, por lo que no se presenta porcentaje de cumplimiento. Los 52 NNA reportados en julio y los 11 reportados en agosto son cortes mensuales; no deben sumarse ni presentarse como participantes únicos. Con la información disponible, el informe no establece un total consolidado de NNA únicos. El 28 de julio se realizó un cambio de docente líder en Danzas con empalme pedagógico favorable."
   },
-  resumenEjecutivo: "Durante julio y agosto de 2026 se dio continuidad al proceso de formación artística y corporal de la Fundación San Antonio - GMMMC. En julio se recuperaron rutinas, se fortaleció la memoria corporal y coreográfica y se preparó la presentación del Día de la Familia del 1 de agosto. El 28 de julio Diana Cortés asumió el liderazgo de Danzas tras un empalme pedagógico organizado con Eryck Martínez, sin afectar significativamente la continuidad del proceso. Después de la presentación se inició un nuevo ciclo de fortalecimiento técnico, físico y expresivo en danza y porras. Se reportaron 12 sesiones, 24 horas de formación y puntualidad docente del 100%.",
+  resumenEjecutivo: "Durante julio y agosto de 2026 se dio continuidad al proceso de formación artística y corporal de la Fundación San Antonio - GMMMC. En julio se recuperaron rutinas, se fortaleció la memoria corporal y coreográfica y se preparó la presentación del Día de la Familia del 1 de agosto. El 28 de julio Diana Cortés asumió el liderazgo de Danzas tras un empalme pedagógico organizado con Eryck Martínez, sin afectar significativamente la continuidad del proceso. Después de la presentación se inició un nuevo ciclo de fortalecimiento técnico, físico y expresivo en danza y porras. Se realizaron 32 sesiones —11 de Danzas y 21 de Porras—, equivalentes a 64 horas de formación, con puntualidad docente del 100%.",
   avances: [
     "Recuperación del ritmo de trabajo después de las vacaciones y consolidación de las rutinas para el Día de la Familia.",
     "Presentación realizada el 1 de agosto, con mayor seguridad escénica y coordinación grupal.",
@@ -47,8 +48,8 @@ const INFORME_DATA = {
   procesosPorArea: [
     {
       area: "Danzas", icono: "💃", color: "#6B3FA0",
-      descripcion: "Durante julio se realizaron ensayos y repasos para el Día de la Familia; después de la presentación se inició un ciclo técnico progresivo de coordinación, ritmo, disociación, flexibilidad, giros y creación coreográfica.",
-      sesionesProgramadas: "No desagregado", sesionesRealizadas: "No desagregado", participantes: "Ver nota",
+      descripcion: "Se realizaron 3 sesiones en julio y 8 en agosto, para un total de 11. Durante julio se realizaron ensayos y repasos para el Día de la Familia; después de la presentación se inició un ciclo técnico progresivo de coordinación, ritmo, disociación, flexibilidad, giros y creación coreográfica.",
+      sesionesProgramadas: "No reportado", sesionesRealizadas: 11, participantes: "Ver nota",
       avances: ["Mayor seguridad en la ejecución, recordación de secuencias, sincronización, desplazamientos y coordinación grupal.", "Mejor comprensión de los giros, control corporal y capacidad para integrar movimientos previos en nuevas secuencias.", "Las pequeñas frases coreográficas permitieron integrar memoria, coordinación, ritmo, técnica y disociación."],
       retos: ["Fortalecer transiciones, concentración durante la ejecución, ritmo y mantenimiento del pulso.", "La ausencia de vestuario en algunos ensayos limitó la simulación completa de la presentación."],
       proyeccion: "Mantener la metodología acumulativa, fortalecer core, técnica de giros, flexibilidad, ritmo y disociación, y avanzar en nuevos montajes.",
@@ -56,8 +57,8 @@ const INFORME_DATA = {
     },
     {
       area: "Porras", icono: "🎀", color: "#D43B8A",
-      descripcion: "El periodo incluyó repaso y ajuste de posiciones, marcaciones, planimetrías y grupos acrobáticos para la presentación, seguido por fortalecimiento de gimnasia, fuerza, estabilidad y limpieza técnica.",
-      sesionesProgramadas: "No desagregado", sesionesRealizadas: "No desagregado", participantes: "Ver nota",
+      descripcion: "Se realizaron 6 sesiones en julio y 15 en agosto, para un total de 21. El periodo incluyó repaso y ajuste de posiciones, marcaciones, planimetrías y grupos acrobáticos para la presentación, seguido por fortalecimiento de gimnasia, fuerza, estabilidad y limpieza técnica.",
+      sesionesProgramadas: "No reportado", sesionesRealizadas: 21, participantes: "Ver nota",
       avances: ["Fortalecimiento de memoria muscular, posiciones, cambios, ubicación en rutina y ejecución con conteo.", "Avances en arcos, rollos, medialunas, paradas de manos con caída en arco, flexibilidad y trabajo en parejas.", "Incorporación progresiva de nuevas habilidades y segmentos dentro de los montajes coreográficos."],
       retos: ["Las ausencias, salidas pedagógicas y falta de continuidad de algunas integrantes afectaron planimetrías y ensayos colectivos.", "Continuar fortaleciendo fuerza, resistencia, estabilidad, sincronización y limpieza técnica."],
       proyeccion: "Profundizar el trabajo gimnástico según las necesidades de cada estudiante e integrar las habilidades adquiridas en futuros montajes.",
