@@ -155,14 +155,8 @@ function renderIndicadores(d) {
 
   const cards = [
     {
-      valor: ind.sesionesProgramadas,
-      etiqueta: 'Sesiones programadas',
-      icono: '📋',
-      tipo: 'neutral'
-    },
-    {
       valor: ind.sesionesRealizadas,
-      etiqueta: 'Sesiones realizadas',
+      etiqueta: 'Sesiones realizadas (julio–agosto)',
       icono: '✅',
       tipo: 'success'
     },
@@ -174,27 +168,21 @@ function renderIndicadores(d) {
       barra: true,
       pct
     }] : []),
-    ...(ind.nnaAtendidos ? [{
-      valor: ind.nnaAtendidos,
-      etiqueta: ind.etiquetaNnaAtendidos || 'NNA atendidos',
-      icono: '👥',
-      tipo: 'info'
-    }] : []),
     ...(ind.horasRealizadas ? [{
       valor: ind.horasProgramadas ? `${ind.horasRealizadas}/${ind.horasProgramadas}h` : `${ind.horasRealizadas}h`,
-      etiqueta: ind.horasProgramadas ? 'Horas realizadas' : 'Horas de formación',
+      etiqueta: ind.horasProgramadas ? 'Horas realizadas' : 'Horas de formación (2 h por sesión)',
       icono: '⏱',
       tipo: 'neutral'
     }] : []),
     ...(ind.puntualidadDocentes ? [{
       valor: ind.puntualidadDocentes,
-      etiqueta: 'Puntualidad docentes',
+      etiqueta: 'Puntualidad docente (25 registros)',
       icono: '🕘',
       tipo: 'success'
     }] : []),
     ...(typeof ind.cambiosDocente !== 'undefined' ? [{
       valor: ind.cambiosDocente,
-      etiqueta: 'Cambios de docente',
+      etiqueta: 'Cambio de docente (Danzas)',
       icono: '🔄',
       tipo: 'info'
     }] : [])
@@ -212,9 +200,18 @@ function renderIndicadores(d) {
     </div>
   `).join('');
 
-  if (ind.observacionGeneral) {
-    const obs = document.getElementById('indicadores-obs');
-    if (obs) obs.textContent = ind.observacionGeneral;
+  const contexto = document.getElementById('indicadores-contexto');
+  if (contexto) {
+    const notas = Array.isArray(ind.notas) ? ind.notas : [];
+    contexto.innerHTML = notas.length ? `
+      <div class="indicadores-contexto-titulo">Cómo leer estos datos</div>
+      <div class="indicadores-notas">
+        ${notas.map(nota => `
+          <article class="indicadores-nota">
+            <h3>${nota.titulo}</h3>
+            <p>${nota.texto}</p>
+          </article>`).join('')}
+      </div>` : '';
   }
 }
 
