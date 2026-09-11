@@ -11,18 +11,25 @@ const INFORME_DATA = {
   coordinador: "",
   fase: "Presentación del Día de la Familia y fortalecimiento técnico progresivo",
   indicadores: {
-    sesionesProgramadas: "No reportado",
+    sesionesProgramadas: null,
     sesionesRealizadas: 32,
     cumplimiento: "No comparable",
     puntualidadDocentes: "100%",
     cambiosDocente: 1,
-    nnaAtendidos: "52 / 11",
-    etiquetaNnaAtendidos: "NNA reportados (jul./ago.)",
     horasProgramadas: null,
     horasRealizadas: 64,
-    observacionGeneral: "Se realizaron 32 sesiones y 64 horas de formación: en julio, 3 de Danzas y 6 de Porras; en agosto, 8 de Danzas y 15 de Porras. No se reportó una programación consolidada para el periodo, por lo que no se presenta porcentaje de cumplimiento. Los 52 NNA reportados en julio y los 11 reportados en agosto son cortes mensuales; no deben sumarse ni presentarse como participantes únicos. Con la información disponible, el informe no establece un total consolidado de NNA únicos. El 28 de julio se realizó un cambio de docente líder en Danzas con empalme pedagógico favorable."
+    notas: [
+      {
+        titulo: "Registros mensuales de NNA",
+        texto: "Julio: 52 · Agosto: 11. Son cortes mensuales de NNA reportados; no se suman ni equivalen a un total de participantes únicos."
+      },
+      {
+        titulo: "Programación y cumplimiento",
+        texto: "No se recibió una programación consolidada del periodo. Por ello no se calcula un porcentaje de cumplimiento."
+      }
+    ]
   },
-  resumenEjecutivo: "Durante julio y agosto de 2026 se dio continuidad al proceso de formación artística y corporal de la Fundación San Antonio - GMMMC. En julio se recuperaron rutinas, se fortaleció la memoria corporal y coreográfica y se preparó la presentación del Día de la Familia del 1 de agosto. El 28 de julio Diana Cortés asumió el liderazgo de Danzas tras un empalme pedagógico organizado con Eryck Martínez, sin afectar significativamente la continuidad del proceso. Después de la presentación se inició un nuevo ciclo de fortalecimiento técnico, físico y expresivo en danza y porras. Se realizaron 32 sesiones —11 de Danzas y 21 de Porras—, equivalentes a 64 horas de formación, con puntualidad docente del 100%.",
+  resumenEjecutivo: "Durante julio y agosto de 2026 se dio continuidad al proceso de formación artística y corporal de la Fundación San Antonio - GMMMC. En julio se recuperaron rutinas, se fortaleció la memoria corporal y coreográfica y se preparó la presentación del Día de la Familia del 1 de agosto. El 28 de julio Diana Cortés asumió el liderazgo de Danzas tras un empalme pedagógico organizado con Eryck Martínez, sin afectar significativamente la continuidad del proceso. Después de la presentación se inició un nuevo ciclo de fortalecimiento técnico, físico y expresivo en danza y porras. Se realizaron 32 sesiones —11 de Danzas y 21 de Porras—, equivalentes a 64 horas de formación (2 horas por sesión), con puntualidad docente del 100%.",
   avances: [
     "Recuperación del ritmo de trabajo después de las vacaciones y consolidación de las rutinas para el Día de la Familia.",
     "Presentación realizada el 1 de agosto, con mayor seguridad escénica y coordinación grupal.",
