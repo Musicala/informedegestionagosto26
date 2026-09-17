@@ -260,7 +260,7 @@ function renderAreaCards(d) {
         </div>
         <div class="area-stat">
           <span class="stat-num">${area.participantes || '–'}</span>
-          <span class="stat-lbl">participantes</span>
+          <span class="stat-lbl">${area.etiquetaParticipantes || 'participantes'}</span>
         </div>
         ${Number.isFinite(pct) ? `
           <div class="area-stat cumplimiento-stat cumplimiento-${colorClass}">
