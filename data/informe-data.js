@@ -20,8 +20,8 @@ const INFORME_DATA = {
     horasRealizadas: 64,
     notas: [
       {
-        titulo: "Registros mensuales de NNA",
-        texto: "Julio: 52 · Agosto: 11. Son cortes mensuales de NNA reportados; no se suman ni equivalen a un total de participantes únicos."
+        titulo: "Inscripción del segundo semestre",
+        texto: "El listado institucional registra 11 NNA inscritos en Danzas y 41 en Porras: 52 NNA distintos en total. Estas cifras corresponden a inscripción, no a un acumulado de asistencias mensuales."
       },
       {
         titulo: "Programación y cumplimiento",
@@ -29,7 +29,7 @@ const INFORME_DATA = {
       }
     ]
   },
-  resumenEjecutivo: "Durante julio y agosto de 2026 se dio continuidad al proceso de formación artística y corporal de la Fundación San Antonio - GMMMC. En julio se recuperaron rutinas, se fortaleció la memoria corporal y coreográfica y se preparó la presentación del Día de la Familia del 1 de agosto. El 28 de julio Diana Cortés asumió el liderazgo de Danzas tras un empalme pedagógico organizado con Eryck Martínez, sin afectar significativamente la continuidad del proceso. Después de la presentación se inició un nuevo ciclo de fortalecimiento técnico, físico y expresivo en danza y porras. Se realizaron 32 sesiones —11 de Danzas y 21 de Porras—, equivalentes a 64 horas de formación (2 horas por sesión), con puntualidad docente del 100%. Se reportaron 11 NNA únicos asistentes en Danzas y 41 en Porras.",
+  resumenEjecutivo: "Durante julio y agosto de 2026 se dio continuidad al proceso de formación artística y corporal de la Fundación San Antonio - GMMMC. En julio se recuperaron rutinas, se fortaleció la memoria corporal y coreográfica y se preparó la presentación del Día de la Familia del 1 de agosto. El 28 de julio Diana Cortés asumió el liderazgo de Danzas tras un empalme pedagógico organizado con Eryck Martínez, sin afectar significativamente la continuidad del proceso. Después de la presentación se inició un nuevo ciclo de fortalecimiento técnico, físico y expresivo en danza y porras. Se realizaron 32 sesiones —11 de Danzas y 21 de Porras—, equivalentes a 64 horas de formación (2 horas por sesión), con puntualidad docente del 100%. El listado institucional del segundo semestre registra 11 NNA inscritos en Danzas y 41 en Porras, para un total de 52 NNA distintos.",
   avances: [
     "Recuperación del ritmo de trabajo después de las vacaciones y consolidación de las rutinas para el Día de la Familia.",
     "Presentación realizada el 1 de agosto, con mayor seguridad escénica y coordinación grupal.",
@@ -56,7 +56,7 @@ const INFORME_DATA = {
     {
       area: "Danzas", icono: "💃", color: "#6B3FA0",
       descripcion: "Se realizaron 3 sesiones en julio y 8 en agosto, para un total de 11. Durante julio se realizaron ensayos y repasos para el Día de la Familia; después de la presentación se inició un ciclo técnico progresivo de coordinación, ritmo, disociación, flexibilidad, giros y creación coreográfica.",
-      sesionesProgramadas: "No reportado", sesionesRealizadas: 11, participantes: 11, etiquetaParticipantes: "NNA únicos asistentes",
+      sesionesProgramadas: "No reportado", sesionesRealizadas: 11, participantes: 11, etiquetaParticipantes: "NNA inscritos (segundo semestre)",
       avances: ["Mayor seguridad en la ejecución, recordación de secuencias, sincronización, desplazamientos y coordinación grupal.", "Mejor comprensión de los giros, control corporal y capacidad para integrar movimientos previos en nuevas secuencias.", "Las pequeñas frases coreográficas permitieron integrar memoria, coordinación, ritmo, técnica y disociación."],
       retos: ["Fortalecer transiciones, concentración durante la ejecución, ritmo y mantenimiento del pulso.", "La ausencia de vestuario en algunos ensayos limitó la simulación completa de la presentación."],
       proyeccion: "Mantener la metodología acumulativa, fortalecer core, técnica de giros, flexibilidad, ritmo y disociación, y avanzar en nuevos montajes.",
@@ -65,7 +65,7 @@ const INFORME_DATA = {
     {
       area: "Porras", icono: "🎀", color: "#D43B8A",
       descripcion: "Se realizaron 6 sesiones en julio y 15 en agosto, para un total de 21. El periodo incluyó repaso y ajuste de posiciones, marcaciones, planimetrías y grupos acrobáticos para la presentación, seguido por fortalecimiento de gimnasia, fuerza, estabilidad y limpieza técnica.",
-      sesionesProgramadas: "No reportado", sesionesRealizadas: 21, participantes: 41, etiquetaParticipantes: "NNA únicos asistentes",
+      sesionesProgramadas: "No reportado", sesionesRealizadas: 21, participantes: 41, etiquetaParticipantes: "NNA inscritos (segundo semestre)",
       avances: ["Fortalecimiento de memoria muscular, posiciones, cambios, ubicación en rutina y ejecución con conteo.", "Avances en arcos, rollos, medialunas, paradas de manos con caída en arco, flexibilidad y trabajo en parejas.", "Incorporación progresiva de nuevas habilidades y segmentos dentro de los montajes coreográficos."],
       retos: ["Las ausencias, salidas pedagógicas y falta de continuidad de algunas integrantes afectaron planimetrías y ensayos colectivos.", "Continuar fortaleciendo fuerza, resistencia, estabilidad, sincronización y limpieza técnica."],
       proyeccion: "Profundizar el trabajo gimnástico según las necesidades de cada estudiante e integrar las habilidades adquiridas en futuros montajes.",
